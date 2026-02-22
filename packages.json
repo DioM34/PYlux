@@ -48,5 +48,10 @@
     "version": "1.0",
     "description": "The small well known snakes game",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/snake.py"
+  },
+  "pyrar": {
+    "version": "1.0",
+    "description": "An python made archiver",
+    "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/pyrar.py"
   }
 }
