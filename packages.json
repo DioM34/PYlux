@@ -58,5 +58,10 @@
     "version": "1.0",
     "description": "Allows you to encrypt files (multi layer protection included)",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/encrypt.py"
+  },
+  "pymap": {
+    "version": "1.0",
+    "description": "A Network mapper allows you to use selfmade version or nmap (if installed)",
+    "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/pymap.py"
   }
 }
