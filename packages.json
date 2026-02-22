@@ -28,5 +28,10 @@
     "version": "1.1",
     "description": "Live hardware resource and process monitor",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/htop.py"
+  },
+  "explorer": {
+    "version": "1.0",
+    "description": "A graphical user explorer for listing files",
+    "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/explorer.py"
   }
 }
