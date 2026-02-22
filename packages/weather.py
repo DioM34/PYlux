@@ -4,52 +4,59 @@ from colorama import Fore, Style
 def run(args, current_dir, username, start_time, is_sudo=False):
     """
     Enhanced Weather & Astronomy Tool for PYlux OS.
-    Usage: weather [city_name]
+    Usage: 
+      weather [city]            - Current weather and today's table
+      weather [city] --tomorrow  - Forecast for the next day
     """
-    city = args[0] if args else ""
+    # Check for the tomorrow flag
+    show_tomorrow = "--tomorrow" in args
+    city_args = [arg for arg in args if arg != "--tomorrow"]
+    city = city_args[0] if city_args else ""
     
     # ASCII Logo
     logo = f"""{Fore.YELLOW}
-      \   /
+      \\   /
        .-.
     -- (   ) --
        `-´
-      /   \{Style.RESET_ALL}"""
+      /   \\{Style.RESET_ALL}"""
 
     print(logo)
-    print(f"{Fore.CYAN}Fetching live data for {city if city else 'your location'}...{Style.RESET_ALL}")
+    
+    target_label = "tomorrow" if show_tomorrow else "today"
+    print(f"{Fore.CYAN}Fetching {target_label}'s forecast for {city if city else 'your location'}...{Style.RESET_ALL}")
 
     def fetch_wttr(params):
         try:
             url = f"https://wttr.in/{city}{params}"
+            # Using curl user-agent ensures we get the formatted text output
             req = urllib.request.Request(url, headers={'User-Agent': 'curl/7.64.1'})
             with urllib.request.urlopen(req) as response:
                 return response.read().decode('utf-8').strip()
         except:
             return None
 
-    # Fetch main weather (compact format) and astronomy data
-    weather_data = fetch_wttr("?0?q?T")
-    astro_data = fetch_wttr("?format=%D+%S+%s+%m") 
+    # Fetch main weather (compact format)
+    # ?0 = today, ?1 = tomorrow
+    day_param = "1" if show_tomorrow else "0"
+    
+    # We fetch with formatting: ?0?q?T for summary, but for the table we use:
+    # 'n' = narrow format, '0' = current only, but let's use the full v2 report
+    # and strip it down to what we need.
+    weather_report = fetch_wttr(f"?{day_param}?n?F") 
 
-    if not weather_data:
+    if not weather_report:
         print(f"{Fore.RED}Error: Could not connect to weather service.{Style.RESET_ALL}")
         return
 
-    print("\n" + Fore.WHITE + "—" * 50)
+    print("\n" + Fore.WHITE + "—" * 60)
     
-    # Display Weather
-    print(f"{Fore.MAGENTA}CURRENT WEATHER:{Style.RESET_ALL}")
-    print(weather_data)
+    # Display the structured table provided by wttr.in
+    # This includes time, temperature (Celsius), and condition
+    print(f"{Fore.MAGENTA}{target_label.upper()} FORECAST & DETAILS:{Style.RESET_ALL}")
+    print(weather_report)
     
-    # Display Astronomy (Dawn, Sunrise, Sunset, Moon Phase)
-    if astro_data:
-        # astro_data looks like: "06:12 06:40 18:20 🌕"
-        parts = astro_data.split()
-        if len(parts) >= 4:
-            print("\n" + Fore.MAGENTA + "ASTRONOMY & TIME:" + Style.RESET_ALL)
-            print(f"{Fore.CYAN}  🌅 Sunrise: {Fore.WHITE}{parts[1]}")
-            print(f"{Fore.CYAN}  🌇 Sunset:  {Fore.WHITE}{parts[2]}")
-            print(f"{Fore.CYAN}  🌙 Moon:    {Fore.WHITE}{parts[3]}")
-    
-    print(Fore.WHITE + "—" * 50 + "\n")
+    print(Fore.WHITE + "—" * 60)
+    if not show_tomorrow:
+        print(f"{Fore.DIM}Tip: Type 'weather {city} --tomorrow' to see the next day.{RESET}")
+    print("\n")
