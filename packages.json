@@ -53,5 +53,10 @@
     "version": "1.0",
     "description": "An python made archiver",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/pyrar.py"
+  },
+  "encrypt": {
+    "version": "1.0",
+    "description": "Allows you to encrypt files (multi layer protection included)",
+    "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/encrypt.py"
   }
 }
