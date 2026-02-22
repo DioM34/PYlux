@@ -45,8 +45,8 @@ def run(args, current_dir, username, start_time, is_sudo=False):
         "⢸⣿⣿⣿⣿⣿⡇⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿ ",
         "⠘⣿⣿⣿⣿⣿⡇⠀⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠁  ",
         " ⠈⠛⠻⠿⠿⠇⠀⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⣿⡇      ",
-        "        ⣿⣿⣿⣿⣿⣿⣿⣧⣀⣀⣿⠇     ",
-        "        ⠘⢿⣿⣿⣿⣿⣿⣿⣿⡿⠋      "
+        "        ⣿⣿⣿⣿⣿⣿⣿⣧⣀⣀⣿⠇      ",
+        "        ⠘⢿⣿⣿⣿⣿⣿⣿⣿⡿⠋       "
     ]
 
     # 4. System Info Data (Expanded Information)
