@@ -1,4 +1,4 @@
-# PYluxOS
+# PYlux
 this is a python made sandbox (fake) linux
 which is 100% open source and free for everyone
 
