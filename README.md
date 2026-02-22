@@ -12,3 +12,9 @@ Features:
   if you have suggestions, reports or bugs you can open a pull request and i will be taking a look at it :^)
 
   DISCLAIMER: this project was made 100% vibecoding using ai like Gemini or ChatGPT if you encounter any issues or bugs as i said open a pull request or an issue
+
+  * a
+  * test
+  * test1
+  * test2
+  * 
