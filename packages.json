@@ -9,4 +9,9 @@
     "description": "Professional System Information Tool",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/neofetch.py"
   }
+  "calculator": {
+    "version": "1.0",
+    "description": "Professional System Information Tool",
+    "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/calculator.py"
+  }
 }
