@@ -13,8 +13,8 @@
 ## ✨ Features
 
 * **📦 The `py` Package Manager** – Easily manage packages found in the `/packages` folder of this repository.
-* **📂 Real Directory Logic** – Experience a system structured like Linux with `/bin`, `/core`, and `/packages`.
-* **🎨 Customizable MOTD** – Personalize your startup experience by editing `motd.txt`.
+* **📂 Real Directory Logic** – Experience a system structured like Linux with `/bin`, `/core`, `/boot` and `/packages`.
+* **🎨 Customizable MOTD** – Personalize your startup experience by editing the `motd.txt`.
 * **🛡️ Sandbox Mode** – Stay within your PYlux environment without accidentally exiting to your host system.
 * **🚀 Active Package Support** – The library of available packages is constantly expanding.
 * **🍃 Resource Efficient** – Significantly lighter on hardware than running a full Virtual Machine (VM).
@@ -31,7 +31,7 @@ PYlux mimics a standard Unix-like hierarchy to keep system files and user script
 * **`/packages`**: The landing zone for all external tools installed via the `py` manager.
 * **`/boot`**: The directory for the bootmessages and the logo
 * **`motd.txt`**: Edit this file to change the ASCII logo and welcome message shown at boot.
-* 
+
 ---
 
 ## ⌨️ Core Commands
