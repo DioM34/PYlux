@@ -78,7 +78,7 @@
     "version": "1.1",
     "description": "An open working chat for all PYluxOS users",
     "url": "https://raw.githubusercontent.com/DioM34/PYlux-repo/main/packages/pychat.py"
-  }
+  },
   "btop": {
     "version": "1.0",
     "description": "a fork of htop but more graphical",
